@@ -1,7 +1,7 @@
 locals {
   # CHANGE
   repo_name      = "suzuki-shunsuke/tfaction-getting-started"
-  s3_bucket_name = "<S3 Bucket Name for tfaction>"
+  s3_bucket_name = "terraform-tfaction-demo"
   region         = "us-east-1"
 }
 
@@ -55,7 +55,7 @@ resource "aws_s3_bucket" "tfaction" {
   bucket        = local.s3_bucket_name
   force_destroy = true
 }
-  
+
 resource "aws_s3_bucket_acl" "tfaction" {
   bucket = aws_s3_bucket.tfaction.id
   acl    = "private"
